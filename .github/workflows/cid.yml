@@ -14,10 +14,10 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
-      - name: ESLint
-        run: npm run lint
       - name: Install Modules
         run: sudo npm ci --unsafe-perm=true --allow-root
+      - name: ESLint
+        run: npm run lint
       - name: Test
         run: npm run test
   publish:
