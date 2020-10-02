@@ -1,6 +1,6 @@
 {
 	"ignorePatterns": [
-		"dist/*"
+		"**/dist/**"
 	],
 	"parser": "@typescript-eslint/parser",
 	"parserOptions": {

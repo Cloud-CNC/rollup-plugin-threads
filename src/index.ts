@@ -4,7 +4,7 @@
 
 //Imports
 import {createFilter} from '@rollup/pluginutils';
-import {Plugin, OutputChunk, OutputOptions, rollup} from 'rollup';
+import {Plugin, OutputChunk, rollup} from 'rollup';
 import {resolve} from 'path';
 import type {Options} from './types';
 

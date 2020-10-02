@@ -23,7 +23,7 @@ const worker = await spawn(BlobWorker.from(WorkerText));
 console.log(worker.echo('Hello World!')); //Worker received: Hello World!
 
 //Destroy the worker
-Thread.terminate(worker)
+Thread.terminate(worker);
 ```
 
 ## Worker
@@ -37,7 +37,7 @@ const worker = {
   {
     return `Worker received: ${input}`;
   }
-}
+};
 
 //Expose worker
 expose(worker);
@@ -57,7 +57,7 @@ export default {
     resolve(),
     threads({
       //Exclude files
-      exclude: ['tmp/worker.js'],
+      exclude: ['**/exclude-me/worker.js'],
 
       //Include files
       include: ['**/worker.js'],
@@ -71,5 +71,5 @@ export default {
       ]
     })
   ]
-}
+};
 ```
