@@ -8,6 +8,8 @@ import typescript from 'rollup-plugin-typescript2';
 //Export
 export default {
   external: [
+    '@rollup/pluginutils',
+    'path',
     'rollup'
   ],
   input: 'src/index.ts',

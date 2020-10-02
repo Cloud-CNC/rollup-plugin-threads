@@ -3,17 +3,28 @@
  */
 
 //Imports
-import type {Plugin} from 'rollup';
+import type {ExternalOption, Plugin} from 'rollup';
+import type {FilterPattern} from '@rollup/pluginutils';
 
 export interface Options
 {
   /**
-   * Name of the worker file
+   * Files to exclude
    */
-  file: string,
+  exclude?: FilterPattern,
 
   /**
-   * List of Rollup plugins to run against the worker
+   * Files to include
    */
-  plugins: Plugin[]
+  include?: FilterPattern,
+
+  /**
+   * Rollup child bundler externals
+   */
+  external: ExternalOption,
+
+  /**
+   * Rollup child bundler plugins
+   */
+  plugins?: Plugin[]
 }
