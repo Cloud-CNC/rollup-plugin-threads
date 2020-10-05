@@ -1,9 +1,9 @@
 # ThreadsJS Rollup integration
 [![npm](https://img.shields.io/npm/v/rollup-plugin-threads)](https://npmjs.com/package/rollup-plugin-threads)
-[![tests](https://img.shields.io/github/workflow/status/Cloud-CNC/rollup-plugin-threads/Tests?label=tests)](https://github.com/Cloud-CNC/rollup-plugin-threads/actions)
+[![tests](https://img.shields.io/github/workflow/status/Cloud-CNC/rollup-plugin-threads/CID?label=ci/cd)](https://github.com/Cloud-CNC/rollup-plugin-threads/actions)
 [![last commit](https://img.shields.io/github/last-commit/Cloud-CNC/rollup-plugin-threads)](https://github.com/Cloud-CNC/rollup-plugin-threads/commits/master)
 
-[ThreadsJS](https://threads.js.org) integration for [Rollup](https://rollupjs.org)
+[ThreadsJS](https://threads.js.org) integration for [Rollup](https://rollupjs.org). If you're using Webpack, you may want to check out [threads-webpack-plugin](https://github.com/cloud-cnc/threads-webpack-plugin) (Basically does the same thing as this plugin but for Webpack).
 
 # Features
 * Written in modern TypeScript
