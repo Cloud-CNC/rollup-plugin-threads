@@ -6,15 +6,17 @@
 import {createFilter} from '@rollup/pluginutils';
 import {Plugin, OutputChunk, rollup} from 'rollup';
 import {resolve} from 'path';
+import chalk from 'chalk';
 import type {Options} from './types';
 
 //Export
-export default function (options: Options)
+export default function (options: Partial<Options>)
 {
   //Default options
   options = {
     exclude: [],
     include: ['**/worker.js', '**/worker.ts'],
+    verbose: false,
     plugins: [],
     ...options
   };
@@ -40,6 +42,12 @@ export default function (options: Options)
       {
         //Get file name
         const file = resolve(id);
+
+        //Verbose logging
+        if (options.verbose)
+        {
+          console.log(`[${chalk.bold('Threads Plugin 📦')}] Bundling worker at ${chalk.bold.green(file)}`);
+        }
 
         //Bundle worker
         const build = await rollup({

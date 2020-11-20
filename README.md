@@ -55,6 +55,8 @@ export default {
   input: 'src/index.js',
   plugins: [
     resolve(),
+
+    //FYI: this needs to be called BEFORE the typescript plugin if you're using TypeScript
     threads({
       //Exclude files
       exclude: ['**/exclude-me/worker.js'],
@@ -64,6 +66,9 @@ export default {
 
       //Rollup external configuration (Marks as external, helpful for Node runtimes)
       external: ['events'],
+
+      //Enable verbose logging (Simply prints what the child-bundler is bundling)
+      verbose: true,
 
       //Child bundler plugins (Not reused; must be redefined if you want the same plugins)
       plugins: [

@@ -9,6 +9,7 @@ import typescript from 'rollup-plugin-typescript2';
 export default {
   external: [
     '@rollup/pluginutils',
+    'chalk',
     'path',
     'rollup'
   ],

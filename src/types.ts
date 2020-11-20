@@ -11,12 +11,17 @@ export interface Options
   /**
    * Files to exclude
    */
-  exclude?: FilterPattern,
+  exclude: FilterPattern,
 
   /**
    * Files to include
    */
-  include?: FilterPattern,
+  include: FilterPattern,
+
+  /**
+   * Wether or not to enable verbose logging
+   */
+  verbose: boolean,
 
   /**
    * Rollup child bundler externals
@@ -26,5 +31,5 @@ export interface Options
   /**
    * Rollup child bundler plugins
    */
-  plugins?: Plugin[]
+  plugins: Plugin[]
 }
