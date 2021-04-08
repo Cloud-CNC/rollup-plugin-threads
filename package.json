@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-threads",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "ThreadsJS Rollup integration",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
