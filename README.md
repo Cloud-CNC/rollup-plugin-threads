@@ -18,7 +18,7 @@ import {BlobWorker, spawn, Thread} from 'threads';
 import WorkerText from './worker'; //May have to @ts-ignore if using TypeScript
 
 //Create a **BLOB WORKER**
-const worker = await spawn(BlobWorker.from(WorkerText));
+const worker = await spawn(BlobWorker.fromText(WorkerText));
 
 console.log(worker.echo('Hello World!')); //Worker received: Hello World!
 
