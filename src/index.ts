@@ -16,6 +16,10 @@ export default function (options: Options)
   options = {
     exclude: [],
     include: ['**/worker.js', '**/worker.ts'],
+    output: {
+      format: 'umd',
+      name: 'WorkerThread'
+    },
     verbose: false,
     ...options
   };
@@ -61,11 +65,14 @@ export default function (options: Options)
           input: file
         });
 
+        //Validate output option
+        if (options.output == null || Array.isArray(options.output))
+        {
+          this.error('Invalid output option! (Expected non-null object)');
+        }
+
         //Get bundled worker code
-        const bundle = await build.generate({
-          format: 'iife',
-          name: 'WorkerThread'
-        });
+        const bundle = await build.generate(options.output);
 
         //Get output chunks
         const chunks = <OutputChunk[]>bundle.output.filter(chunk => chunk.type == 'chunk');
