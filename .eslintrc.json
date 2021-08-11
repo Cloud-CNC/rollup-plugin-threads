@@ -8,7 +8,8 @@
 		"sourceType": "module"
 	},
 	"plugins": [
-		"@typescript-eslint"
+		"@typescript-eslint",
+		"eslint-plugin-import"
 	],
 	"rules": {
 		"arrow-parens": [
@@ -30,6 +31,9 @@
 		"no-extra-semi": "error",
 		"object-curly-spacing": "warn",
 		"semi": "error",
+		"import/order": [
+			"error"
+		],
 		"quotes": [
 			"warn",
 			"single"
@@ -42,7 +46,6 @@
 		"prefer-const": "warn"
 	},
 	"env": {
-		"browser": true,
 		"node": true
 	}
 }

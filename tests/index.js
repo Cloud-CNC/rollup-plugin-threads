@@ -1,23 +1,24 @@
 //Imports
+import chalk from 'chalk';
 import {BlobWorker, spawn, Thread} from 'threads';
 import WorkerText from './worker';
 
 const main = async () =>
 {
-  //Create a **BLOB WORKER**
+  //Create a blob worker
   const worker = await spawn(BlobWorker.fromText(WorkerText));
 
-  const res = await worker.echo('Hello World!');
+  //Echo some text
+  const res = await worker('Hello World!');
 
+  //Verify the text
   if (res == 'Worker received: Hello World!')
   {
-    console.clear();
-    console.log('Passing!');
+    console.log(chalk.green('Passing!'));
   }
   else
   {
-    console.clear();
-    console.error(`Failing; received: ${res}`);
+    console.error(chalk.red(`Failing; received: ${res}`));
     process.exit(1);
   }
 

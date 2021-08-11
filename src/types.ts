@@ -3,33 +3,25 @@
  */
 
 //Imports
-import type {ExternalOption, Plugin} from 'rollup';
-import type {FilterPattern} from '@rollup/pluginutils';
+import {FilterPattern} from '@rollup/pluginutils';
+import {RollupOptions} from 'rollup';
 
-export interface Options
-{
+/**
+ * Plugin options
+ */
+export type Options = RollupOptions & {
   /**
    * Files to exclude
    */
-  exclude: FilterPattern,
+  exclude?: FilterPattern;
 
   /**
    * Files to include
    */
-  include: FilterPattern,
+  include?: FilterPattern;
 
   /**
    * Wether or not to enable verbose logging
    */
-  verbose: boolean,
-
-  /**
-   * Rollup child bundler externals
-   */
-  external: ExternalOption,
-
-  /**
-   * Rollup child bundler plugins
-   */
-  plugins: Plugin[]
-}
+  verbose?: boolean;
+};
