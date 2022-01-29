@@ -1,5 +1,5 @@
 //Imports
-import {expose} from 'threads';
+import {expose} from 'threads/worker';
 
 //Expose the worker
 expose(input =>
